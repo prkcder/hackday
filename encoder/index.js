@@ -9,7 +9,6 @@ function getEightCharacterString(inputString) {
     return zeroes
 }
 
-// todo: make a function to always have a byte
 function Dna() {}
 
 Dna.prototype.encode = function(str, type) {
@@ -29,4 +28,4 @@ Dna.prototype.encode = function(str, type) {
     ).join("");
 };
 
-module.exports = Dna;
+module.exports = { Dna };
