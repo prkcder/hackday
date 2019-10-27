@@ -74,12 +74,3 @@ Input: ACTGACTAAGAT, Output: cat
 
 **Objective 8:** (80 pts) Given two (single) strands of DNA, provide an interface that allows finding the longest common subsequence of the two. Recall that common subsequences need not be consecutive.
 
-
-## **Innovation** 
-Have an idea for an innovative feature for this project? Each accepted innovation that is completed will earn you a total of 50 points.  
-
-**Innovations must meet the following criteria:**
-- Must have completed at least 70% of all objectives
-- Must be a new idea (creative and original) - talk to an organizer first
-- Must not cause any regression in user experience
-
