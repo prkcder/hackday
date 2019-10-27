@@ -12,17 +12,29 @@ const dictionary = {
             'A': '00',
             'C': '11'
         }
+    },
+    rna: {
+        binary: {
+            '01': 'U',
+            '10': 'G',
+            '00': 'A',
+            '11': 'C'
+        },
+        letters: {
+            'U': '01',
+            'G': '10',
+            'A': '00',
+            'C': '11'
+        }
     }
 };
-
+/*
 function Dna(str) {
     const chars = str.split("");
     const bins = chars.map(char => getEightCharacterString(char.charCodeAt(0).toString(2)));
-
     return bins.map(
         word => {
             const pairs = word.match(/.{1,2}/g);
-
             return pairs.map(
                 pair => {
                     return dictionary.dna.binary[pair];
@@ -30,6 +42,40 @@ function Dna(str) {
             ).join("")
         }
     ).join("");
+}
+*/
+// flag: 0 := dna encode; 1:= rna
+// function encode(str, flag) {
+//     const chars = str.split("");
+//     const bins = chars.map(char => getEightCharacterString(char.charCodeAt(0).toString(2)));
+//     return bins.map(
+//         word => {
+//             const pairs = word.match(/.{1,2}/g);
+//             return pairs.map(
+//                 pair => {
+                    // return dictionary[flag ? 'rna' : 'dna'].binary[pair];
+//                 }
+//             ).join("")
+//         }
+//     ).join("");
+// }
+
+function encode(str, flag) {
+    const chars = str.split("");
+    const bins = chars.map(char => getEightCharacterString(char.charCodeAt(0).toString(2)));
+    return bins.map(
+        word => {
+            const pairs = word.match(/.{1,2}/g);
+            return pairs.map(
+                pair => {
+                    var encoder;
+                    if (flag == 0) encoder = 'dna';
+                    else if (flag == 1) encoder = 'rna';
+                    return dictionary[encoder].binary[pair];
+                }
+            ).join("");
+        }
+    ).join("")
 }
 
 function getEightCharacterString(inputString) {
@@ -41,4 +87,9 @@ function getEightCharacterString(inputString) {
     return zeroes
 }
 
-console.log(Dna("cat"));
+function dnaButtonClicked() {
+    var inputVal = document.getElementById("input").value
+    dnaValue = encode(inputVal, 1)
+    document.getElementById("result").value = dnaValue
+}
+// console.log(encode("cat", 1));
