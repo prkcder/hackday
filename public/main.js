@@ -7,6 +7,7 @@ function dnaButtonClicked() {
     )
     .then(res => {
         document.getElementById("result").value = res.data.resp;
+        appendEntryToLog(res, inputVal, 'DNA');
     });
 }
 
@@ -19,5 +20,18 @@ function rnaButtonClicked() {
     )
     .then(res => {
         document.getElementById("result").value = res.data.resp;
+        appendEntryToLog(res, inputVal, 'RNA');
     });
+}
+
+function appendEntryToLog(res, myinput, type) {
+    const ts = res.headers.date;
+    const ul = document.getElementById("myLog");
+    const li = document.createElement("li");
+
+    const str = `${type}: ${myinput} => ${res.data.resp} @ ${ts}`
+    const tx = document.createTextNode(str);
+    
+    li.appendChild(tx);
+    ul.appendChild(li);
 }

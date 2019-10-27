@@ -29,8 +29,6 @@ app.get('/api/dna/valid-substr/:str',(req, res) => {
     res.json({ resp });
 });
 
-
-
 // RNA
 
 app.get('/api/rna/encode/:str',(req, res) => {
@@ -41,7 +39,5 @@ app.get('/api/rna/encode/:str',(req, res) => {
 
     res.json({ resp });
 });
-
-
 
 module.exports = app;

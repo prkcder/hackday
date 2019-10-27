@@ -1,52 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="wrapper">
-        <div id="topBrand"></div>
-        <nav id="scoll-navbar" >
-                <ul>
-                    <li>
-                        <a href=""></a>
-                    </li>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
-                </ul>
-            </nav>
+      <div id="topBrand"></div>
+      <nav id="scoll-navbar">
+        <ul>
+          <li>
+            <a href=""></a>
+          </li>
+          <li><a href=""></a></li>
+          <li><a href=""></a></li>
+        </ul>
+      </nav>
 
-        <div id="Main-container">
-            <div id="row1">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-            </div>
-            <div id="row2">
-                <div id="card-input">
-                    <span>
-                        <h2>HACKDAY 2019</h2>
-                        <p>input text to out put some dna Alright</p>
-                    </span>
-                    <Form>
-                            <input type="search" name="" value="" id="input" placeholder="Convert Text">
-                            <button type="button" onclick="dnaButtonClicked()" name="button">DNA</button>
-                            <button type="button" onclick="rnaButtonClicked()" name="button">RNA</button>
-                    </Form>
-                </div>
-            </div>
-            <div id="row3">
-                <div id="output">
-                        <textarea name="name" id="result" rows="8" cols="80"></textarea>
-
-                </div>
-            </div>
+      <div id="Main-container">
+        <div id="row1">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+        </div>
+        <div id="row2">
+          <div id="card-input">
+            <span>
+              <h2>HACKDAY 2019</h2>
+              <p>input text to out put some dna Alright</p>
+            </span>
+            <Form>
+              <input
+                type="search"
+                name=""
+                value=""
+                id="input"
+                placeholder="Convert Text"
+              />
+              <button type="button" onclick="dnaButtonClicked()" name="button">
+                DNA
+              </button>
+              <button type="button" onclick="rnaButtonClicked()" name="button">
+                RNA
+              </button>
+            </Form>
+          </div>
+        </div>
+        <div id="row3">
+          <div id="output">
+            <textarea name="name" id="result" rows="8" cols="80"></textarea>
+          </div>
+        </div>
+        <div id="row4">
+          <div id="output">
+            <ul id="myLog"></ul>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="main.js"></script>
-</body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+  </body>
 </html>
