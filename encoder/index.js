@@ -9,9 +9,7 @@ function getEightCharacterString(inputString) {
     return zeroes
 }
 
-function Dna() {}
-
-Dna.prototype.encode = function(str, type) {
+function encondeAs(str, type) {
     const chars = str.split("");
     const bins = chars.map(char => getEightCharacterString(char.charCodeAt(0).toString(2)));
 
@@ -21,11 +19,23 @@ Dna.prototype.encode = function(str, type) {
 
             return pairs.map(
                 pair => {
-                    return dictionary.dna.binary[pair];
+                    return dictionary[type].binary[pair];
                 }
             ).join("")
         }
     ).join("");
+}
+
+function Dna() {}
+
+Dna.prototype.encode = function(str) {
+    return encondeAs(str, 'dna');
 };
 
-module.exports = { Dna };
+function Rna() {}
+
+Rna.prototype.encode = function(str) {
+    return encondeAs(str, 'rna');
+};
+
+module.exports = { Dna, Rna };
