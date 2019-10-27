@@ -23,13 +23,29 @@
 </p>
 
 <p align="center">
-  Welcome to the official repository for the IESD Hack Day event.
+  Team Plastic Plate
 </p>
 
+## **Team Plastic Plate**
+Our teams code 
 
 
+## **How to Start**
 
+Clone down the repository
+```
+git clone [the http link]
+```
 
+Install the packages
+```
+npm install
+```
+
+Start your local server
+```
+npm start
+```
 
 
 ## **Tasks**
@@ -67,17 +83,3 @@ Have an idea for an innovative feature for this project? Each accepted innovatio
 - Must be a new idea (creative and original) - talk to an organizer first
 - Must not cause any regression in user experience
 
-## **Scoring**
-
-Based on the point system under tasks, you will also be on the hook for an **additional 10 points**. Your project will be reviewed and given points (not deducted points) if any of the factors below are met or exceeded. 
-
-**Factors in scoring:**
-- Code simplicity
-- Documentation
-- Code commenting
-- UI Design / Visualization Design
-- Presentation
-- Teamwork
-- Collaboration (Git & GitHub commit messages, PRs, comments, review, etc)
-
-Simplicity will be favored over complex/clever code. Commenting code will also be highly favored. 
