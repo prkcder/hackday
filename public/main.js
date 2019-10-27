@@ -12,9 +12,24 @@ const dictionary{
             'A': '00',
             'C': '11'
         }
+    },
+    rna: {
+        binary: {
+            '01': 'U',
+            '10': 'G',
+            '00': 'A',
+            '11': 'C'
+        },
+        letters: {
+            'U': '01',
+            'G': '10',
+            'A': '00',
+            'C': '11'
+        }
     }
 };
 
+/*
 function Dna(str) {
     const chars = str.split("");
     const bins = chars.map(char => getEightCharacterString(char.charCodeAt(0).toString(2)));
@@ -26,6 +41,25 @@ function Dna(str) {
             return pairs.map(
                 pair => {
                     return dictionary.dna.binary[pair];
+                }
+            ).join("")
+        }
+    ).join("");
+}
+*/
+
+// flag: 0 := dna encode; 1:= rna
+function encode(str, flag) {
+    const chars = str.split("");
+    const bins = chars.map(char => getEightCharacterString(char.charCodeAt(0).toString(2)));
+
+    return bins.map(
+        word => {
+            const pairs = word.match(/.{1,2}/g);
+
+            return pairs.map(
+                pair => {
+                    return dictionary[flag ? 'dna' : 'rna'].binary[pair];
                 }
             ).join("")
         }
