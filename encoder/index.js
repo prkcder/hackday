@@ -1,5 +1,10 @@
 const dictionary = require("./config");
 
+/**
+ * Adds zero to the left to complete 8 bits
+ * 
+ * @param {String} inputString 
+ */
 function _getEightCharacterString(inputString) {
     var zeroes = "";
     while (inputString.length + zeroes.length < 8) {
@@ -9,12 +14,24 @@ function _getEightCharacterString(inputString) {
     return zeroes
 }
 
+/**
+ * Checks if the string is a valid RNA or DNA encoded string.
+ * 
+ * @param {String} str 
+ * @param {String} type 
+ */
 function _isValidEncoding(str, type) {
     const valid = dictionary[type].letters;
 
     return str.split("").every(char => valid.hasOwnProperty(char));
 }
 
+/**
+ * Encode an "English" string to DNA
+ * 
+ * @param {String} str 
+ * @param {String} type 
+ */
 function _encondeAs(str, type) {
     const chars = str.split("");
     const bins = chars.map(char => _getEightCharacterString(char.charCodeAt(0).toString(2)));
@@ -32,6 +49,12 @@ function _encondeAs(str, type) {
     ).join("");
 }
 
+/**
+ * Decode an DNA string as to English
+ * 
+ * @param {String} str 
+ * @param {String} type 
+ */
 function _decodeAs(str, type, isComplementary) {
     if (!_isValidEncoding(str, 'dna')) return "";
 
@@ -71,7 +94,5 @@ function Rna() {}
 Rna.prototype.encode = function(str) {
     return _encondeAs(str, 'rna');
 };
-
-const sample = new Dna().decodeComplementary('ACTGACTAAGAT');
 
 module.exports = { Dna, Rna };
