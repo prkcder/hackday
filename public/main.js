@@ -1,4 +1,4 @@
-const dictionary = {
+const dictionary{
     dna: {
         binary: {
             '01': 'T',
